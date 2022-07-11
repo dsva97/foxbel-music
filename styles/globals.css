@@ -1,0 +1,13 @@
+:root {
+  --color-red-principal: #e86060;
+  --color-red-secondary: #662323;
+  --color-gray-soft: #bdbdbd;
+  --color-gray: #828282;
+  --color-light-red: #ff7676;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
