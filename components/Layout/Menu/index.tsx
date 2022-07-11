@@ -4,7 +4,7 @@ import { RedTextLogo, ListMenu } from "../../";
 import classes from "./style.module.css";
 import { GrClose } from "react-icons/gr";
 import { useStore } from "../../../store";
-import { useMedia } from "use-hooks";
+import { useMobile } from "../../../hooks";
 
 const libraryMenuData = [
   {
@@ -51,7 +51,7 @@ const playlistMenuData = [
 interface IMenuProps extends HTMLAttributes<HTMLDivElement> {}
 export const Menu = ({ className, ...props }: IMenuProps) => {
   const { isMenuOpen, setIsMenuOpen } = useStore();
-  const isMobile = useMedia(["(max-width: 768px)"], [true], false);
+  const isMobile = useMobile();
   return !isMenuOpen && isMobile ? null : (
     <div className={`${classes.container} ${className}`} {...props}>
       <Link href="/">
