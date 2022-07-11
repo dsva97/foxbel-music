@@ -2,19 +2,23 @@ import { InputHTMLAttributes } from "react";
 import { SearchIcon } from "../icons";
 import classes from "./style.module.css";
 
-interface ISearcherProps extends InputHTMLAttributes<HTMLInputElement> {}
+interface ISearcherProps extends InputHTMLAttributes<HTMLInputElement> {
+  containerClassName?: string;
+  inputClassName?: string;
+}
 
 export const Searcher = ({
-  className,
+  containerClassName,
+  inputClassName,
   placeholder = "Buscar",
   ...props
 }: ISearcherProps) => {
   return (
-    <label className={classes.label}>
+    <label className={`${classes.label} ${containerClassName}`}>
       <input
         type="text"
         placeholder={placeholder}
-        className={`${classes.input} ${className}`}
+        className={`${classes.input} ${inputClassName}`}
         {...props}
       />
       <SearchIcon />

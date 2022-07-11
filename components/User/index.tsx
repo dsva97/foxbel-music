@@ -7,7 +7,7 @@ interface IUserProps extends HTMLAttributes<HTMLDivElement> {
 }
 export const User = ({ name, className, ...props }: IUserProps) => {
   return (
-    <div className={`${classes.container} ${name}`} {...props}>
+    <div className={`${classes.container} ${className}`} {...props}>
       <UserIcon className={classes.icon} />
       <span className={classes.text}>{name}</span>
     </div>

@@ -5,6 +5,12 @@
 .icon {
   margin-right: 0.75rem;
 }
+.icon path {
+  fill: white;
+}
 
-.text {
+@media (min-width: 768px) {
+  .icon path {
+    fill: var(--color-red-principal);
+  }
 }
