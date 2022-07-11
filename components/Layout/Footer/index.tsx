@@ -1,9 +1,10 @@
-import React from "react";
+import React, { HTMLAttributes } from "react";
 import { Player } from "../../";
 
-export const Footer = () => {
+interface IFooterProps extends HTMLAttributes<HTMLDivElement> {}
+export const Footer = (props: IFooterProps) => {
   return (
-    <div>
+    <div {...props}>
       <Player />
     </div>
   );

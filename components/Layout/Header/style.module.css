@@ -19,10 +19,15 @@
   display: none;
 }
 
+.logo {
+  cursor: pointer;
+}
+
 @media (min-width: 768px) {
   .container {
     background: transparent;
-    padding: 30px 40px 20px 40px;
+    padding: calc(var(--padding-x) * 3 / 4) var(--padding-x)
+      calc(var(--padding-x) / 2) var(--padding-x);
   }
 
   .logo {
@@ -31,5 +36,10 @@
 
   .user span {
     display: block;
+  }
+
+  .searcher {
+    margin: 0;
+    margin-right: 1rem;
   }
 }

@@ -1,0 +1,32 @@
+.container .link,
+.title {
+  padding-left: var(--padding-x);
+  padding-right: var(--padding-x);
+}
+.container li:first-child {
+  padding-top: 0.25rem;
+}
+.container li {
+  padding-top: 0.5rem;
+}
+.title {
+  font-size: 1.375rem;
+}
+.link {
+  color: white;
+  color: var(--color);
+  text-decoration: none;
+  position: relative;
+}
+.link.active {
+  color: var(--color-red-principal);
+}
+.link.active::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 5px;
+  background: var(--color-red-principal);
+}
