@@ -1,22 +1,15 @@
 import create from "zustand";
 import { devtools } from "zustand/middleware";
+import { getMenuStore, IMenuStore } from "./menu";
+import { getPlayerStore, IPlayerStore } from "./player";
 
-interface IStore {
-  count: number;
-  increment: () => void;
-  decrement: () => void;
-  isMenuOpen: boolean;
-  setIsMenuOpen: (isMenuOpen: boolean) => void;
-}
+export interface IStore extends IMenuStore, IPlayerStore {}
 
 export const useStore = create(
   devtools<IStore>(
-    (set) => ({
-      count: 0,
-      isMenuOpen: false,
-      setIsMenuOpen: (isMenuOpen) => set((state) => ({ ...state, isMenuOpen })),
-      increment: () => set((state) => ({ count: state.count + 1 })),
-      decrement: () => set((state) => ({ count: state.count - 1 })),
+    (set, get) => ({
+      ...getMenuStore(set, get),
+      ...getPlayerStore(set, get),
     }),
     {
       name: "store",
